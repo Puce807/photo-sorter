@@ -25,3 +25,12 @@ def read_source(directory):
                 with open(file_path, "rb") as f:
                     content = f.read()
                     yield file_path, content
+
+def dms_to_decimal(dms, ref):
+    degrees = dms[0][0] / dms[0][1]
+    minutes = dms[1][0] / dms[1][1]
+    seconds = dms[2][0] / dms[2][1]
+    decimal = degrees + (minutes / 60) + (seconds / 3600)
+    if ref in ['S', 'W']:
+        decimal = -decimal
+    return decimal
