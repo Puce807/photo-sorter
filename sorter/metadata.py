@@ -51,8 +51,4 @@ def get_EXIF(path):
     return result
 
 
-data = get_EXIF(r"C:\Users\lrgc1\Downloads\IMG_20250817_141506765.jpg")
-for i in data:
-    print(data[i])
-
 
